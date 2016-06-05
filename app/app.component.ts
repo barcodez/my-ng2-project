@@ -77,10 +77,6 @@ styles:[`
 })
 export class AppComponent {
   title = 'Tour of Heroes';
- //  hero: Hero = {
- //    id: 11,
-	// name: 'Roseabell Tricker'
- //  };
   public heroes = HEROES;
   selectedHero: Hero;
   onSelect(hero: Hero) { this.selectedHero = hero; }
