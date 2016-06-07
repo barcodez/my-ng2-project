@@ -9,7 +9,7 @@ import { HeroService } from './hero.service';
 	template: `
 		<h2>My Heroes</h2>
 		<ul class="heroes">
-		  <li *ngFor="let hero of heroes" 
+		  <li *ngFor="let hero of heroes"
 		  	[class.selected]="hero === selectedHero"
 		  	(click)="onSelect(hero)">
 		    <!-- each hero goes here -->
@@ -81,11 +81,10 @@ export class HeroesComponent implements OnInit {
   }
 
   ngOnInit() {
-	this.getHeroes();  	
+	this.getHeroes();
   }
- 
-  onSelect(hero: Hero) { 
-  	this.selectedHero = hero; 
+
+  onSelect(hero: Hero) {
+  	this.selectedHero = hero;
   }
 };
-
