@@ -6,6 +6,7 @@ import { RouteConfig,
 import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent}   from './heroes.component';
 import { HeroService }      from './hero.service';
+import { HeroDetailComponent } from './hero-detail.component';
 
 @Component({
 	selector: 'my-app',
@@ -31,6 +32,11 @@ import { HeroService }      from './hero.service';
       name: 'Dashboard',
       component: DashboardComponent,
       useAsDefault: true
+   },
+   {
+      path: '/detail/:id',
+      name: 'HeroDetail',
+      component: HeroDetailComponent
    }
 ])
 export class AppComponent {
