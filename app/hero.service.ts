@@ -62,7 +62,7 @@ export class HeroService  {
       let url = `${this.heroesUrl}/${hero.id}`;
 
       return this.http
-         .put(url, JSON.stringify(hero), { headers: header })
+         .put(url, JSON.stringify(hero), { headers: headers })
          .toPromise()
          .then(() => hero)
          .catch(this.handleError);
