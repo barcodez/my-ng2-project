@@ -50,7 +50,7 @@ export class HeroService  {
       return this.http
          .post(this.heroesUrl, JSON.stringify(hero), {headers: headers})
          .toPromise()
-         .then(res => res.json.data)
+         .then(res => res.json().data)
          .catch(this.handleError)
    }
 
