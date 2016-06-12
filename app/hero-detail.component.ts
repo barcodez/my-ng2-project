@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouteParams } from '@angular/router-deprecated';
 
 import { Hero } from './hero';
@@ -10,8 +10,10 @@ import { HeroService } from './hero.service';
 	styleUrls: ['app/hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-	hero: Hero;
-	navigated: boolean;
+	@Input() hero: Hero;
+	@Output() close = new EventEmitter();
+	error: any;
+	navigated: boolean = false;  // true if navigated to here
 
 	constructor(
 		private heroService: HeroService,
