@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Hero } from './hero';
+import { Hero } from './hero.model';
 
 @Injectable()
 export class HeroService  {
@@ -42,7 +42,7 @@ export class HeroService  {
          .catch(this.handleError)
    }
 
-   // Create a new hero
+   // Create a new heroes
    private post(hero: Hero): Promise<Hero> {
       let headers = new Headers({
          'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ export class HeroService  {
          .catch(this.handleError)
    }
 
-   // Update a specific hero
+   // Update a specific heroes
    private put(hero: Hero) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');

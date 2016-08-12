@@ -24,6 +24,7 @@
     'common',
     'compiler',
     'core',
+    'forms',
     'http',
     'platform-browser',
     'platform-browser-dynamic',
@@ -39,18 +40,29 @@
 
   // Bundled (~40 requests):
   function packUmd(pkgName) {
-    packages['@angular/'+pkgName] = { main: pkgName + '.umd.js', defaultExtension: 'js' };
-  };
+    packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+  }
 
   var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
 
   // Add package entries for angular packages
   ngPackageNames.forEach(setPackageConfig);
 
+  // Adding my own bundler because reasons
+  const my_barrels = [
+    'app/dashboard',
+    'app/heroes',
+    'app/heroes/hero',
+    'app/heroes/hero-detail',
+  ];
+  my_barrels.forEach(function(barrelName) {
+    packages[barrelName] = { main: 'index' };
+  });
+
   var config = {
     map: map,
     packages: packages
-  }
+  };
 
   System.config(config);
 

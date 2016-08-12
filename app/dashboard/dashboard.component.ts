@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
 
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Hero, HeroService } from '../heroes';
 
 @Component({
    selector: "my-dashboard",
-   templateUrl: "app/dashboard.component.html",
-   styleUrls: ["app/dashboard.component.css"]
+   templateUrl: "dashboard.component.html",
+   styleUrls: ["dashboard.component.css"]
 })
 export class DashboardComponent {
    heroes: Hero[] = [];
